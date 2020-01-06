@@ -28,3 +28,13 @@ kubectl apply -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/maste
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-root.yaml
 ```
+
+## Cleanup
+
+```bash
+kubectl delete -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-root.yaml
+kubectl delete -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-not-root.yaml
+kubectl delete -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/network-policy.yaml
+kubectl delete -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/pod-security-policy.yaml
+kubectl delete -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/rbac.yaml
+```
