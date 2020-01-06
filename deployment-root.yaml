@@ -1,0 +1,47 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: wealdy-debug
+  labels:
+    app: wealdy-debug
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: wealdy-debug
+    spec:
+      serviceAccountName: default
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+      containers:
+      - name: alpine
+        image: glitchcrab/alpine-debug:latest
+        command:
+        - sleep
+        args:
+        - 10h
+        resources:
+          requests:
+            cpu: 100m
+            memory: 50Mi
+          limits:
+            cpu: 250m
+            memory: 50Mi
+      - name: ubuntu
+        image: glitchcrab/ubuntu-debug:latest
+        command:
+        - sleep
+        args:
+        - 10h
+        resources:
+          requests:
+            cpu: 100m
+            memory: 20Mi
+          limits:
+            cpu: 200m
+            memory: 250Mi
