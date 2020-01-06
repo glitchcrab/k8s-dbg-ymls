@@ -14,17 +14,17 @@ kubectl apply -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/maste
 ```
 2. Deploy PodSecurityPolicy (if required):
 ```bash
-https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/pod-security-policy.yaml
+kubectl apply -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/pod-security-policy.yaml
 ```
 3. Deploy NetworkPolicy (if required):
 ```bash
-https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/network-policy.yaml
+kubectl apply -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/network-policy.yaml
 ```
 4. Deploy pod as unprivileged user:
 ```bash
-https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-not-root.yaml
+kubectl apply -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-not-root.yaml
 ```
 5. Deploy pod  as root user:
 ```bash
-https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-root.yaml
+kubectl apply -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-root.yaml
 ```
