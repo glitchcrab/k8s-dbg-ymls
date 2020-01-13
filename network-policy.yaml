@@ -1,11 +1,11 @@
 apiVersion: extensions/v1beta1
 kind: NetworkPolicy
 metadata:
-  name: wealdy-debug-network-policy
+  name: debugger-network-policy
 spec:
   podSelector:
     matchLabels:
-      app: wealdy-debug
+      app: debugger
   egress:
   - {}
   ingress:

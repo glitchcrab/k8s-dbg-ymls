@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: wealdy-debug
+  name: debugger
   labels:
-    app: wealdy-debug
+    app: debugger
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: wealdy-debug
+        app: debuggerer
     spec:
       serviceAccountName: default
       securityContext:

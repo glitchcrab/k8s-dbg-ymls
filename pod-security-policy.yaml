@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: PodSecurityPolicy
 metadata:
-  name: wealdy-debug-psp
+  name: debugger-psp
 spec:
   allowPrivilegeEscalation: true
   fsGroup:
