@@ -8,23 +8,27 @@ Note: namespaces are not defined.
 
 ## Deploy
 
-1. Deploy RBAC required to use the PodSecurityPolicy:
+1. Deploy service account:
+```bash
+kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/service-account.yaml
+```
+2. Deploy RBAC required to use the PodSecurityPolicy:
 ```bash
 kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/rbac.yaml
 ```
-2. Deploy PodSecurityPolicy (if required):
+3. Deploy PodSecurityPolicy (if required):
 ```bash
 kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/pod-security-policy.yaml
 ```
-3. Deploy NetworkPolicy (if required):
+4. Deploy NetworkPolicy (if required):
 ```bash
 kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/network-policy.yaml
 ```
-4. Deploy pod as unprivileged user:
+5. Deploy pod as unprivileged user:
 ```bash
 kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-not-root.yaml
 ```
-5. Deploy pod  as root user:
+6. Deploy pod  as root user:
 ```bash
 kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-root.yaml
 ```
@@ -37,4 +41,5 @@ kubectl delete -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/mast
 kubectl delete -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/network-policy.yaml
 kubectl delete -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/pod-security-policy.yaml
 kubectl delete -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/rbac.yaml
+kubectl delete -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/service-account.yaml
 ```

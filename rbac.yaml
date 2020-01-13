@@ -18,7 +18,7 @@ metadata:
   name: debugger-psp:restricted
 subjects:
 - kind: Group
-  name: system:authenticated
+  name: debugger
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: ClusterRole

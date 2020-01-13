@@ -14,7 +14,7 @@ spec:
       labels:
         app: debugger
     spec:
-      serviceAccountName: default
+      serviceAccountName: debugger
       securityContext:
         runAsUser: 0
         runAsGroup: 0
