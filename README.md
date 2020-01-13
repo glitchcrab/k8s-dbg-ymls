@@ -10,23 +10,23 @@ Note: namespaces are not defined.
 
 1. Deploy RBAC required to use the PodSecurityPolicy:
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/rbac.yaml
+kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/rbac.yaml
 ```
 2. Deploy PodSecurityPolicy (if required):
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/pod-security-policy.yaml
+kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/pod-security-policy.yaml
 ```
 3. Deploy NetworkPolicy (if required):
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/network-policy.yaml
+kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/network-policy.yaml
 ```
 4. Deploy pod as unprivileged user:
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-not-root.yaml
+kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-not-root.yaml
 ```
 5. Deploy pod  as root user:
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-root.yaml
+kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-root.yaml
 ```
 
 ## Cleanup
