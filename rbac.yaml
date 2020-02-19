@@ -17,7 +17,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: debugger-psp:restricted
 subjects:
-- kind: Group
+- kind: ServiceAccount
   name: debugger
   apiGroup: rbac.authorization.k8s.io
 roleRef:
