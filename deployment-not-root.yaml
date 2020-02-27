@@ -7,12 +7,15 @@ metadata:
 spec:
   replicas: 1
   revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: debugger
   strategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
-        app: debuggerer
+        app: debugger
     spec:
       serviceAccountName: debugger
       securityContext:
