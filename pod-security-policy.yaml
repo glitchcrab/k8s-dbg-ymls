@@ -5,19 +5,27 @@ metadata:
 spec:
   allowPrivilegeEscalation: true
   fsGroup:
-    rule: RunAsAny
-  hostIPC: false
-  hostNetwork: true
-  hostPID: false
-  hostPorts:
-  - max: 65536
-    min: 1
+    rule: MustRunAs
+    ranges:
+      - min: 1
+        max: 65535
   privileged: true
   runAsUser:
-    rule: RunAsAny
+    rule: MustRunAs
+    ranges:
+      - min: 1
+        max: 65535
+  runAsGroup:
+    rule: MustRunAs
+    ranges:
+      - min: 1
+        max: 65535
   seLinux:
     rule: RunAsAny
   supplementalGroups:
-    rule: RunAsAny
+    rule: MustRunAs
+    ranges:
+      - min: 1
+        max: 65535
   volumes:
   - '*'

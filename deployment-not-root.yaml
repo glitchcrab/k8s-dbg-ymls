@@ -18,16 +18,18 @@ spec:
         app: debugger
     spec:
       serviceAccountName: debugger
-      securityContext:
-        runAsUser: 1000
-        runAsGroup: 1000
-      containers:
-      - name: alpine
-        image: glitchcrab/alpine-debug:latest
+      initContainers:
+      - name: sysctl
+        image: quay.io/giantswarm/alpine:3.9-giantswarm-sysctl
         command:
-        - sleep
-        args:
-        - 10h
+        - sh
+        - -c
+        - sudo sysctl -w vm.swappiness=75
+        imagePullPolicy: IfNotPresent
+        securityContext:
+          privileged: true
+          runAsUser: 1000
+          runAsGroup: 1000
         resources:
           requests:
             cpu: 100m
@@ -35,8 +37,9 @@ spec:
           limits:
             cpu: 250m
             memory: 50Mi
-      - name: ubuntu
-        image: glitchcrab/ubuntu-debug:latest
+      containers:
+      - name: alpine
+        image: quay.io/giantswarm/alpine:3.9-giantswarm-sysctl
         command:
         - sleep
         args:
@@ -48,3 +51,6 @@ spec:
           limits:
             cpu: 200m
             memory: 250Mi
+        securityContext:
+          runAsUser: 1000
+          runAsGroup: 1000
