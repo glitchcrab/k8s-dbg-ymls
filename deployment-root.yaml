@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: debugger
+  name: debug
   labels:
-    app: debugger
+    app: debug
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: debugger
+      app: debug
   strategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
-        app: debugger
+        app: debug
     spec:
-      serviceAccountName: debugger
+      serviceAccountName: debug
       securityContext:
         runAsUser: 0
         runAsGroup: 0

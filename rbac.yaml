@@ -1,27 +1,27 @@
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: debugger-psp:restricted
+  name: debug-psp:restricted
 rules:
 - apiGroups:
   - extensions
   resources:
   - podsecuritypolicies
   resourceNames:
-  - debugger-psp
+  - debug-psp
   verbs:
   - use
 ---
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: debugger-psp:restricted
+  name: debug-psp:restricted
 subjects:
 - kind: ServiceAccount
-  name: debugger
+  name: debug
   namespace: default
 roleRef:
   kind: ClusterRole
-  name: debugger-psp:restricted
+  name: debug-psp:restricted
   apiGroup: rbac.authorization.k8s.io
 
