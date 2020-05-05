@@ -24,14 +24,15 @@ kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/mast
 ```bash
 kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/network-policy.yaml
 ```
-5. Deploy pod as unprivileged user:
-```bash
-kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-not-root.yaml
-```
-6. Deploy pod  as root user:
-```bash
-kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-root.yaml
-```
+5. Deploy pod
+    1. As an unprivileged user:
+    ```bash
+    kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-not-root.yaml
+    ```
+    2. As the root user:
+    ```bash
+    kubectl create -f https://raw.githubusercontent.com/glitchcrab/k8s-dbg-ymls/master/deployment-root.yaml
+    ```
 
 ## Cleanup
 
